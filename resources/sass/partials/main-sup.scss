@@ -4,3 +4,22 @@
     color: white;
     padding: 50px;
 }
+
+.templatecomic {
+    width: calc(100% / 6 - 40px);
+    margin: 25px 20px;
+    cursor: pointer;
+}
+
+.templatecomic img {
+        width: 100%;
+        height: 176px;
+        display: block;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .templatecomic h3{
+        margin-top: 20px;
+        color: #fff;
+    }

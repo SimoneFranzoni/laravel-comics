@@ -12,22 +12,8 @@
       
     </head>
     <body>
-        <header>
-            <div class="container">
-                <div>
-                    <img src="{{ asset('img/dc-logo.png') }}" alt="logo">
-                </div>
-                <div>
-                   <ul>
-                       @foreach ($navlist as $navlist)
-                           <li>
-                               <a href="">{{$navlist}}</a>
-                           </li>
-                       @endforeach
-                    </ul>
-                </div>
-            </div>
-        </header>
+        
+        @include('partials.header')
 
         <main>
             <section class="jumbotrone"></section>
@@ -38,9 +24,12 @@
     
             <div class="container-sup">
                 <div class="container comicsBox">
-                    <p>
-                      ciao
-                    </p>
+                @foreach ($comic as $comic)
+                    <div class="templatecomic">
+                        <img src="{{ $comic['thumb']}}" alt="{{ $comic['series'] }}">
+                        <h3>{{ $comic['series'] }}</h3>
+                    </div>
+                @endforeach
                 </div>    
             </div>
     
@@ -74,59 +63,7 @@
             </div>
         </main>
 
-        <footer>
-            <div class="footer-top">
-                <div class="container">
-                    <div class="list-box">
-                        <div>
-                            <ul>
-                                <ol>Dc comics</ol>
-                                <li v-for="li in listDcComics" :key="li">
-                                    <a href="#">{{li}}</a>
-                                </li>
-                            </ul>
-                            <ul>
-                                <ol>Shop</ol>
-                                <li v-for="li in listShop" :key="li">
-                                    <a href="#">{{li}}</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul>
-                                <ol>Dc</ol>
-                                <li v-for="li in listDc" :key="li">
-                                    <a href="#">{{li}}</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul>
-                                <ol>Sites</ol>
-                                <li v-for="li in listSites" :key="li">
-                                    <a href="#">{{li}}</a>
-                                </li> 
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="dc-logo"></div>
-                </div>
-            </div>
-            <div class="footer-bot">
-                <div class="container">
-                    <div class="btn">
-                        <a href="">Sign-up now!</a>
-                    </div>
-                    <div class="right">
-                        <h2>Follow us</h2>
-                        <img src="..\assets\img\footer-facebook.png" alt="">
-                        <img src="..\assets\img\footer-twitter.png" alt="">
-                        <img src="..\assets\img\footer-youtube.png" alt="">
-                        <img src="..\assets\img\footer-pinterest.png" alt="">
-                        <img src="..\assets\img\footer-periscope.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </footer>
+        @include('partials.footer')
+        
     </body>
 </html>
