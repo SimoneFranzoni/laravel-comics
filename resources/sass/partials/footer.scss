@@ -1,7 +1,7 @@
 
 /*footer top*/
     .footer-top{
-        background-image: url("../../../public/img/footer-bg.jpg");
+        background-image: url("/img/footer-bg.jpg");
         background-size: cover;
     }
 
@@ -16,8 +16,9 @@
     .footer-top .dc-logo{
         margin-left: 50px;
         width: 53%;
-        background-image: url("../../../public/img/dc-logo.png");
+        background-image: url("/img/dc-logo-bg.png");
         background-position: center;
+        
     }
 
     .footer-top ul{
